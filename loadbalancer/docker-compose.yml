@@ -1,0 +1,20 @@
+services:
+  nginx:
+    image: nginx:stable
+    restart: always
+    container_name: nginx
+    networks:
+      - projectr_nw
+    volumes:
+      - ${PWD}/config/nginx/conf.d:/etc/nginx/conf.d
+      - ${PWD}/config/nginx/access.conf:/etc/nginx/access.conf
+    ports:
+      - 8080:80
+
+networks:
+  projectr_nw:
+    name: projectr_nw
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.25.0.0/24

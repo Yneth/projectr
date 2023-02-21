@@ -1,0 +1,44 @@
+services:
+  mongodb:
+    image: mongo
+    restart: always
+    container_name: mongodb
+    networks:
+      - projectr_nw
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data:/data/db
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.8.0
+    container_name: elasticsearch
+    restart: always
+    networks:
+      - projectr_nw
+    environment:
+      - discovery.type=single-node
+      # enable es head
+      - http.cors.enabled=true
+      - http.cors.allow-origin=*
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - 9200:9200
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+
+volumes:
+  mongodb_data: { }
+  es_data: { }
+
+networks:
+  projectr_nw:
+    name: projectr_nw
+    external: true

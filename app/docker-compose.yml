@@ -1,0 +1,18 @@
+services:
+  app:
+    container_name: app
+    restart: always
+    build: $PWD
+    networks:
+      - projectr_nw
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - MONGODB_URL=mongodb://admin:admin@mongodb:27017
+    ports:
+      - "5000:5000"
+
+networks:
+  projectr_nw:
+    name: projectr_nw
+    external: true
+
