@@ -19,6 +19,7 @@ Was not able to see events from `Admin > Events` tab, need to wait for 24h.
 * To generate client_id use gtag script;
 * To debug correctness of event request, use `/debug` at the beginning of the uri;
 * To validate event sending, use `Reports > Realtime` tab;
+* client_id can be random. Maybe, I was a bit inattentive on this one, but I did not receive events in Realtime tab. Need to recheck.
 
 # Useful resources:
 * https://ga-dev-tools.google - to test events
