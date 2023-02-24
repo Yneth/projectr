@@ -78,7 +78,7 @@ Shortest transaction:           0.02
 ```
 
 ## Analysis
-System did not fail under load.
+System handled the load, with 0.05% availability drop.
 
 For some reason telegraf incorrectly tracks packet rate. It can be validated using bmon screenshot from API container.
 
@@ -86,4 +86,5 @@ The most CPU consuming application was `elasticsearch` which could quickly becom
 
 It is important to mention that my elasticsearch query may be optimized by caching as I forgot to add sorting, and it always gives the first ten results.
 
-Also, it would be nice to test using separate endpoints for mongo/elastic read/write with customisable load configuration to see system behaviour with different scenarios. For example having 25% to read and 75% to write.
+Unfortunately I did not check which requests failed.
+To track it would be nice to test using separate endpoints for mongo/elastic read/write with customisable load configuration to see system behaviour with different scenarios. For example having 25% to read and 75% to write.
