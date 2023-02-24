@@ -88,3 +88,6 @@ It is important to mention that my elasticsearch query may be optimized by cachi
 
 Unfortunately I did not check which requests failed.
 To track it would be nice to test using separate endpoints for mongo/elastic read/write with customisable load configuration to see system behaviour with different scenarios. For example having 25% to read and 75% to write.
+
+## Useful resources
+* Amazing telegraf dashboard: https://grafana.com/grafana/dashboards/61-telegraf-metrics/
