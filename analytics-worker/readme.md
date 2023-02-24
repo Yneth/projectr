@@ -20,6 +20,6 @@ Was not able to see events from `Admin > Events` tab, need to wait for 24h.
 * To debug correctness of event request, use `/debug` at the beginning of the uri;
 * To validate event sending, use `Reports > Realtime` tab;
 
-Useful resources:
+# Useful resources:
 * https://ga-dev-tools.google - to test events
 * https://lookerstudio.google.com/ - to build dashboards over events
