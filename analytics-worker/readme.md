@@ -2,6 +2,11 @@
 
 Sample application to send Google Analytics using [measurement protocol](https://developers.google.com/analytics/devguides/collection/protocol/ga4).
 
+Script works in a following way:
+* query privat24 api first day of month in a period between 2015 and 2022;
+* filter UAH-USD pairs;
+* send to analytics;
+ 
 # Result
 Screenshot from `Reports > Realtime`.
 

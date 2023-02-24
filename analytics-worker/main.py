@@ -1,4 +1,3 @@
-# https://api.privatbank.ua/p24api/exchange_rates?json&date=01.12.2014
 import datetime
 import logging
 import os
@@ -13,6 +12,11 @@ RETRY = Retry(total=5,
 
 
 def get_exchange_rate(session, date):
+    """
+    queries Privat24 API currency exchange pairs.
+    filters only UAH USD pairs and returns object as is.
+    """
+
     logging.info("getting exchange rate for date %s", date)
 
     date_str = date.strftime("%d.%m.%Y")
