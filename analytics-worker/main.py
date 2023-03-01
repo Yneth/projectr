@@ -75,6 +75,7 @@ def main():
             session.mount(prefix='https://', adapter=HTTPAdapter(max_retries=RETRY))
             for first_day_of_month in months(2015, 2022):
                 exchange_pair = get_exchange_rate(session, first_day_of_month)
+                exchange_pair['date'] = first_day_of_month.strftime("%Y-%m-%d")
                 send_analytics(session, measurement_id, api_secret, client_id, is_debug, exchange_pair)
     except Exception as e:
         logging.error("failed to transfer exchange rates, reason", e)
