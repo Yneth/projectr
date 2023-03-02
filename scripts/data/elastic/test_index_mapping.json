@@ -1,0 +1,1 @@
+{"test_index":{"mappings":{"properties":{"data":{"type":"text","fields":{"keyword":{"type":"keyword","ignore_above":256}}},"time":{"type":"long"}}}}}
